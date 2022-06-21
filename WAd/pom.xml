@@ -111,19 +111,6 @@
         </configuration>
       </plugin>
       
-       <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.8.4</version>   <!-- 2.4  -->
-            <configuration>
-                <archive>
-                    <manifest>
-                        <mainClass>your.main.Class</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
-      
       </plugins>
     </pluginManagement>
   </build>
