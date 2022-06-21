@@ -73,7 +73,7 @@ public class SignUP
 		WebElement SubmitRegister = driver.findElement(By.id("SubmitRegister"));	
 		SubmitRegister.click();
 
-		assertEquals("https://dev.waffarad.com/Merchant/Account/Register", driver.getCurrentUrl()) ;
+		assertEquals("https://dev.waffarad.com/Merchant", driver.getCurrentUrl()) ;
 
 		driver.findElement(By.linkText("User")).click();
 
@@ -126,7 +126,7 @@ public class SignUP
 		WebElement SubmitRegister = driver.findElement(By.id("SubmitRegister"));	
 		SubmitRegister.click();
 
-		assertEquals("https://dev.waffarad.com/Merchant/Account/Register", driver.getCurrentUrl()) ;
+		assertEquals("https://dev.waffarad.com/Merchant", driver.getCurrentUrl()) ;
 	}
 	@Test
 	public void SignUP_CorrectData_Butinsert_numberWhichExistBefore_in_phone() throws IOException //All fields correct but insert number which exist before in field phone
