@@ -9,13 +9,54 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">33,910</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">11</td><td class="num">190,351</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">Pages.Login</td><td><a href="#m0">Login_All_fields_empty</a></td><td rowspan="1">1655979328183</td><td rowspan="1">801</td></tr><tr class="passedeven"><td><a href="#m1">Login_Correct_username_AndWrong_password</a></td><td rowspan="1">1655979335909</td><td rowspan="1">1025</td></tr><tr class="passedeven"><td><a href="#m2">Login_Valid_Data</a></td><td rowspan="1">1655979343620</td><td rowspan="1">1156</td></tr><tr class="passedeven"><td><a href="#m3">Login_Wrong_username_Correct_password</a></td><td rowspan="1">1655979351655</td><td rowspan="1">911</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="11">Pages.EditOrder_In_Yashry</td><td><a href="#m0">ValidData_WithInsert_NegativeNumber_In_OrderDiscount</a></td><td rowspan="1">1655990298838</td><td rowspan="1">155</td></tr><tr class="failedeven"><td><a href="#m1">ValidData_WithInsert_NegativeNumber_In_OrderShipping</a></td><td rowspan="1">1655990315254</td><td rowspan="1">42</td></tr><tr class="failedeven"><td><a href="#m2">ValidData_WithInsert_NegativeNumber_In_OrderTotal</a></td><td rowspan="1">1655990333562</td><td rowspan="1">41</td></tr><tr class="failedeven"><td><a href="#m3">ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal</a></td><td rowspan="1">1655990349261</td><td rowspan="1">53</td></tr><tr class="failedeven"><td><a href="#m4">ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal</a></td><td rowspan="1">1655990368271</td><td rowspan="1">46</td></tr><tr class="failedeven"><td><a href="#m5">ValidData_With_Insert_Zero_In_OrderDiscount</a></td><td rowspan="1">1655990382697</td><td rowspan="1">40</td></tr><tr class="failedeven"><td><a href="#m6">ValidData_With_Insert_Zero_In_OrderShipping</a></td><td rowspan="1">1655990397651</td><td rowspan="1">39</td></tr><tr class="failedeven"><td><a href="#m7">ValidData_With_Insert_Zero_In_OrderTotal</a></td><td rowspan="1">1655990411710</td><td rowspan="1">122</td></tr><tr class="failedeven"><td><a href="#m8">ValidData_Without_InsertData_In_OrderDiscount</a></td><td rowspan="1">1655990426975</td><td rowspan="1">65</td></tr><tr class="failedeven"><td><a href="#m9">ValidData_Without_InsertData_In_OrderShipping</a></td><td rowspan="1">1655990442553</td><td rowspan="1">70</td></tr><tr class="failedeven"><td><a href="#m10">ValidData_Without_InsertData_In_OrderTotal</a></td><td rowspan="1">1655990456769</td><td rowspan="1">34</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Pages.EditOrder_In_Yashry</td><td><a href="#m11">CheckThat_someFields_Disabled</a></td><td rowspan="1">1655990284857</td><td rowspan="1">230</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">Pages.Login#Login_All_fields_empty</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Pages.Login#Login_Correct_username_AndWrong_password</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Pages.Login#Login_Valid_Data</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">Pages.Login#Login_Wrong_username_Correct_password</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">Pages.EditOrder_In_Yashry#ValidData_WithInsert_NegativeNumber_In_OrderDiscount</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_WithInsert_NegativeNumber_In_OrderDiscount(EditOrder_In_Yashry.java:392)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Pages.EditOrder_In_Yashry#ValidData_WithInsert_NegativeNumber_In_OrderShipping</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_WithInsert_NegativeNumber_In_OrderShipping(EditOrder_In_Yashry.java:223)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Pages.EditOrder_In_Yashry#ValidData_WithInsert_NegativeNumber_In_OrderTotal</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_WithInsert_NegativeNumber_In_OrderTotal(EditOrder_In_Yashry.java:96)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Pages.EditOrder_In_Yashry#ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal(EditOrder_In_Yashry.java:518)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Pages.EditOrder_In_Yashry#ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal(EditOrder_In_Yashry.java:349)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">Pages.EditOrder_In_Yashry#ValidData_With_Insert_Zero_In_OrderDiscount</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_With_Insert_Zero_In_OrderDiscount(EditOrder_In_Yashry.java:476)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">Pages.EditOrder_In_Yashry#ValidData_With_Insert_Zero_In_OrderShipping</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_With_Insert_Zero_In_OrderShipping(EditOrder_In_Yashry.java:307)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">Pages.EditOrder_In_Yashry#ValidData_With_Insert_Zero_In_OrderTotal</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_With_Insert_Zero_In_OrderTotal(EditOrder_In_Yashry.java:180)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">Pages.EditOrder_In_Yashry#ValidData_Without_InsertData_In_OrderDiscount</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_Without_InsertData_In_OrderDiscount(EditOrder_In_Yashry.java:434)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">Pages.EditOrder_In_Yashry#ValidData_Without_InsertData_In_OrderShipping</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_Without_InsertData_In_OrderShipping(EditOrder_In_Yashry.java:265)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">Pages.EditOrder_In_Yashry#ValidData_Without_InsertData_In_OrderTotal</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [713982] but found [714688]
+	at Pages.EditOrder_In_Yashry.ValidData_Without_InsertData_In_OrderTotal(EditOrder_In_Yashry.java:138)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">Pages.EditOrder_In_Yashry#CheckThat_someFields_Disabled</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

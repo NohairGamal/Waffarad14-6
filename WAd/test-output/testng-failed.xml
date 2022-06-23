@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="Pages.EditOrder_In_Yashry">
+        <methods>
+          <include name="ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal"/>
+          <include name="ValidData_Without_InsertData_In_OrderDiscount"/>
+          <include name="open_URL"/>
+          <include name="ValidData_WithInsert_NegativeNumber_In_OrderDiscount"/>
+          <include name="quit"/>
+          <include name="ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal"/>
+          <include name="ValidData_Without_InsertData_In_OrderShipping"/>
+          <include name="ValidData_WithInsert_NegativeNumber_In_OrderShipping"/>
+          <include name="ValidData_With_Insert_Zero_In_OrderDiscount"/>
+          <include name="ValidData_Without_InsertData_In_OrderTotal"/>
+          <include name="ValidData_WithInsert_NegativeNumber_In_OrderTotal"/>
+          <include name="ValidData_With_Insert_Zero_In_OrderShipping"/>
+          <include name="ValidData_With_Insert_Zero_In_OrderTotal"/>
+        </methods>
+      </class> <!-- Pages.EditOrder_In_Yashry -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
