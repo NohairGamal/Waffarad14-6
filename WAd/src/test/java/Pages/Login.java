@@ -10,6 +10,9 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.LogStatus;
+
 import TestBase.TestData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -28,7 +31,7 @@ public class Login extends TestData
 	@Test
 	public void Login_Valid_Data() throws IOException
 	{
-		//	test = extent.startTest("Login_Valid_Data");
+		test = extent.startTest("Login_Valid_Data");
 
 		WebElement UserName = driver.findElement(By.id("UserName"));
 		UserName.clear();
@@ -49,7 +52,7 @@ public class Login extends TestData
 	@Test
 	public void Login_Correct_username_AndWrong_password() throws IOException //Correct user name & wrong password
 	{
-		//	test = extent.startTest("Login_Correct_username_AndWrong_password");
+		test = extent.startTest("Login_Correct_username_AndWrong_password");
 
 		WebElement UserName = driver.findElement(By.id("UserName"));
 		UserName.clear();
@@ -67,7 +70,7 @@ public class Login extends TestData
 	@Test
 	public void Login_Wrong_username_Correct_password() throws IOException //Wrong user name & Correct password
 	{
-		//	test = extent.startTest("Login_Wrong_username_Correct_password");
+		test = extent.startTest("Login_Wrong_username_Correct_password");
 
 		WebElement UserName = driver.findElement(By.id("UserName"));
 		UserName.clear();
@@ -86,7 +89,7 @@ public class Login extends TestData
 	@Test
 	public void Login_All_fields_empty() throws IOException //All fields empty
 	{
-		//test = extent.startTest("Login_All_fields_empty");
+		test = extent.startTest("Login_All_fields_empty");
 
 		WebElement UserName = driver.findElement(By.id("UserName"));
 		UserName.clear();
@@ -103,18 +106,18 @@ public class Login extends TestData
 	@AfterMethod
 	public void quit(ITestResult result)
 	{
-		//		if (result.getStatus() == ITestResult.SUCCESS)
-		//		{
-		//			test.log(LogStatus.PASS, "Test case passed");
-		//		}
-		//		else if(result.getStatus() == ITestResult.FAILURE)
-		//		{
-		//			test.log(LogStatus.FAIL, result.getThrowable());
-		//		}
-		//		else if(result.getStatus() == ITestResult.SKIP)
-		//		{
-		//			test.log(LogStatus.SKIP, "Test case skip");
-		//		}
+		if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			test.log(LogStatus.PASS, "Test case passed");
+		}
+		else if(result.getStatus() == ITestResult.FAILURE)
+		{
+			test.log(LogStatus.FAIL, result.getThrowable());
+		}
+		else if(result.getStatus() == ITestResult.SKIP)
+		{
+			test.log(LogStatus.SKIP, "Test case skip");
+		}
 		driver.close();
 	}
 }

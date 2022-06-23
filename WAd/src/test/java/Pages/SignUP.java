@@ -9,12 +9,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import com.relevantcodes.extentreports.LogStatus;
+import TestBase.TestData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SignUP 
+public class SignUP extends TestData
 {
 	WebDriver driver;
 	@BeforeMethod
@@ -30,7 +33,7 @@ public class SignUP
 	@Test
 	public void SignUP_ValidData() throws IOException
 	{
-	//	test = extent.startTest("SignUP_ValidData");
+		test = extent.startTest("SignUP_ValidData");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -84,7 +87,7 @@ public class SignUP
 	@Test
 	public void SignUP_ValidData_WithInsert_any_data_In_Description() throws IOException //All fields correct but insert any data field Description
 	{
-		//test = extent.startTest("SignUP_ValidData_WithInsert_any_data_In_Description");
+		test = extent.startTest("SignUP_ValidData_WithInsert_any_data_In_Description");
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
 		MerchantName.sendKeys("Nohair");
@@ -131,7 +134,7 @@ public class SignUP
 	@Test
 	public void SignUP_CorrectData_Butinsert_numberWhichExistBefore_in_phone() throws IOException //All fields correct but insert number which exist before in field phone
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_numberWhichExistBefore_in_phone");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_numberWhichExistBefore_in_phone");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -179,7 +182,7 @@ public class SignUP
 	@Test
 	public void SignUP_All_fields_empty() throws IOException //All fields empty
 	{
-		//test = extent.startTest("SignUP_All_fields_empty");
+		test = extent.startTest("SignUP_All_fields_empty");
 
 		driver.findElement(By.id("MerchantName")).clear();
 
@@ -203,7 +206,7 @@ public class SignUP
 	@Test
 	public void SignUP_CorrectData_Butinsert_spaces_only_in_name() throws IOException //All fields correct but insert spaces only in field name
 	{
-	//	test = extent.startTest("SignUP_CorrectData_Butinsert_spaces_only_in_name");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_spaces_only_in_name");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -251,7 +254,7 @@ public class SignUP
 	@Test
 	public void SignUP_CorrectData_Butinsert_NumbersandSymbols_in_name() throws IOException//All fields correct but insert insert Numbers and symbols in field name
 	{
-	//	test = extent.startTest("SignUP_CorrectData_Butinsert_NumbersandSymbols_in_name");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_NumbersandSymbols_in_name");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -296,7 +299,7 @@ public class SignUP
 	@Test
 	public void SignUP_CorrectData_Butinsert_Wrong_Format_in_URL() throws IOException //All fields correct but insert Wrong Format in URL
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_Wrong_Format_in_URL");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_Wrong_Format_in_URL");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -342,7 +345,7 @@ public class SignUP
 	@Test
 	public void SignUP_CorrectData_Butinsert_Wrong_Format_in_Mail() throws IOException //All fields correct but insert Wrong Format in Mail
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_Wrong_Format_in_Mail");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_Wrong_Format_in_Mail");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -385,7 +388,7 @@ public class SignUP
 	@Test
 	public void SignUP_CorrectData_Butinsert_email_exist_before_in_Mail() throws IOException //All fields correct but insert email exist before in Mail
 	{
-	//	test = extent.startTest("SignUP_CorrectData_Butinsert_email_exist_before_in_Mail");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_email_exist_before_in_Mail");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -427,7 +430,7 @@ public class SignUP
 	@Test
 	public void SignUP_CorrectData_Butinsert_lettersandsymbols_in_phone() throws IOException//All fields correct but insert letters and symbols in phone
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_lettersandsymbols_in_phone");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_lettersandsymbols_in_phone");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -474,7 +477,7 @@ public class SignUP
 	public void SignUP_CorrectData_Butinsert_value_less_than_minimum_limitation_in_phone() throws IOException
 	//All fields correct but insert value less than minimum limitation in phone
 	{
-	//	test = extent.startTest("SignUP_CorrectData_Butinsert_value_less_than_minimum_limitation_in_phone");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_value_less_than_minimum_limitation_in_phone");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -521,7 +524,7 @@ public class SignUP
 	public void SignUP_CorrectData_Butinsert_value_Greater_than_maximum_limitation_in_phone() throws IOException
 	//All fields correct but insert value Greater than maximum limitation in phone
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_value_Greater_than_maximum_limitation_in_phone");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_value_Greater_than_maximum_limitation_in_phone");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -568,7 +571,7 @@ public class SignUP
 	public void SignUP_CorrectData_Butinsert_value_less_than_minimum_limitation_in_password() throws IOException
 	//All fields correct but insert value less than minimum limitation in password
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_value_less_than_minimum_limitation_in_password");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_value_less_than_minimum_limitation_in_password");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -615,7 +618,7 @@ public class SignUP
 	public void SignUP_CorrectData_Butinsert_value_Greater_than_maximum_limitation_in_password() throws IOException
 	//All fields correct but insert value Greater than maximum limitation in password
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_value_Greater_than_maximum_limitation_in_password");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_value_Greater_than_maximum_limitation_in_password");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -662,7 +665,7 @@ public class SignUP
 	public void SignUP_CorrectData_Butinsert_differentValuesin_password_and_confirmpassword() throws IOException
 	//All fields correct but insert different Values in password and confirmpassword
 	{
-		//test = extent.startTest("SignUP_CorrectData_Butinsert_diffrentValuesin_password_and_confirmpassword");
+		test = extent.startTest("SignUP_CorrectData_Butinsert_diffrentValuesin_password_and_confirmpassword");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -708,7 +711,7 @@ public class SignUP
 	@Test
 	public void BackButton() throws IOException //All fields correct but insert number which exist before in field phone
 	{
-		//test = extent.startTest("BackButton");
+		test = extent.startTest("BackButton");
 		
 		WebElement BackButton = driver.findElement(By.linkText("Back"));
 		BackButton.click();
@@ -719,7 +722,7 @@ public class SignUP
 	@Test
 	public void SignUP_Check_System_TerminateSpacesFrom_Mail() throws IOException
 	{
-		//test = extent.startTest("SignUP_Check_System_TerminateSpacesFrom_Mail");
+		test = extent.startTest("SignUP_Check_System_TerminateSpacesFrom_Mail");
 
 		WebElement MerchantName = driver.findElement(By.id("MerchantName"));
 		MerchantName.clear();
@@ -761,10 +764,21 @@ public class SignUP
 
 		assertEquals("https://dev.waffarad.com/Merchant/Account/Register", driver.getCurrentUrl());
 	}
-
 	@AfterMethod
-	public void quit()
+	public void quit(ITestResult result)
 	{
+		if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			test.log(LogStatus.PASS, "Test case passed");
+		}
+		else if(result.getStatus() == ITestResult.FAILURE)
+		{
+			test.log(LogStatus.FAIL, result.getThrowable());
+		}
+		else if(result.getStatus() == ITestResult.SKIP)
+		{
+			test.log(LogStatus.SKIP, "Test case skip");
+		}
 		driver.close();
 	}
 }

@@ -6,10 +6,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class TestData 
 {
-	public class testData
-	{
-		public ExtentReports extent;
-		public ExtentTest test ;	
-		public WebDriver driver ;
-	}
+	public static ExtentReports extent;
+	public static ExtentTest test ;
+	
+	public static WebDriver driver ;
 }
