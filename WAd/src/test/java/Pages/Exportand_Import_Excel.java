@@ -12,9 +12,13 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import TestBase.TestData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Exportand_Import_Excel 
+public class Exportand_Import_Excel extends TestData
 {
 	WebDriver driver;
 
@@ -49,7 +53,7 @@ public class Exportand_Import_Excel
 	{
 		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
 
-//		test =extent.startTest("ExportExcel_And_BulkUpdate");
+		test =extent.startTest("ExportExcel_And_BulkUpdate");
 
 		WebElement orders = driver.findElement(By.xpath("//*[@href='/Merchant/Orders']"));
 		orders.click();
@@ -66,7 +70,7 @@ public class Exportand_Import_Excel
 	{
 		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
 
-		//test =extent.startTest("Click_UploadFile_Without_chooseFile");
+		test =extent.startTest("Click_UploadFile_Without_chooseFile");
 
 		WebElement orders = driver.findElement(By.xpath("//*[@href='/Merchant/Orders']"));
 		orders.click();
@@ -87,7 +91,7 @@ public class Exportand_Import_Excel
 	{
 		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
 
-		//test =extent.startTest("Upload_wrong_file_type");
+		test =extent.startTest("Upload_wrong_file_type");
 
 		WebElement orders = driver.findElement(By.xpath("//*[@href='/Merchant/Orders']"));
 		orders.click();
@@ -110,6 +114,18 @@ public class Exportand_Import_Excel
 	@AfterMethod
 	public void quit(ITestResult result)
 	{
-		driver.quit();	
+		if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			test.log(LogStatus.PASS, "Test case passed");
+		}
+		else if(result.getStatus() == ITestResult.FAILURE)
+		{
+			test.log(LogStatus.FAIL, result.getThrowable());
+		}
+		else if(result.getStatus() == ITestResult.SKIP)
+		{
+			test.log(LogStatus.SKIP, "Test case skip");
+		}
+		driver.close();
 	}
 }

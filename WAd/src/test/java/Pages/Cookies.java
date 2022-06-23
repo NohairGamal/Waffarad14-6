@@ -4,14 +4,17 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.LogStatus;
+
 import TestBase.TestData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Cookies extends TestData
-
 {
 	WebDriver driver;
 
@@ -26,7 +29,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_footcourt() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_footcourt");
+		test =extent.startTest("Cookies_footcourt");
 
 		driver.navigate().to("https://www.footcourt-eg.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");
 		Thread.sleep(2000);
@@ -46,7 +49,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_msou() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_msou");
+		test =extent.startTest("Cookies_msou");
 
 		driver.navigate().to("https://www.msou.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");
 
@@ -67,7 +70,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_magmasport() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_magmasport");
+		test =extent.startTest("Cookies_magmasport");
 
 		driver.navigate().to("https://magmasportswear.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");	
 
@@ -88,7 +91,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_melouk() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_melouk");
+		test =extent.startTest("Cookies_melouk");
 
 		driver.navigate().to("https://www.melouk.site/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");	
 
@@ -109,7 +112,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_Entertainer() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_Entertainer");
+		test =extent.startTest("Cookies_Entertainer");
 
 		driver.navigate().to("https://entertaineregypt.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");	
 
@@ -130,7 +133,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_olife() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_olife");
+		test =extent.startTest("Cookies_olife");
 
 		driver.navigate().to("https://olifemena.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");	
 
@@ -151,7 +154,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_Auditechnology() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_Auditechnology");
+		test =extent.startTest("Cookies_Auditechnology");
 
 		driver.navigate().to("https://audioteceg.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");	
 
@@ -172,7 +175,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_alsharifbeaute() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_alsharifbeaute");
+		test =extent.startTest("Cookies_alsharifbeaute");
 
 		driver.navigate().to("https://alsharifbeaute.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");
 		Thread.sleep(2000);
@@ -191,7 +194,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_Carina() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_Carina");
+		test =extent.startTest("Cookies_Carina");
 
 		driver.navigate().to("https://carinawear.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");
 		Thread.sleep(2000);
@@ -211,7 +214,7 @@ public class Cookies extends TestData
 	@Test
 	public void Cookies_cdejewelry() throws InterruptedException
 	{
-		//test =extent.startTest("Cookies_cdejewelry");
+		test =extent.startTest("Cookies_cdejewelry");
 
 		driver.navigate().to("https://cdejewelry-egypt.com/?afftoken=31180&afsrc=waffarad&af_id=a7293ce1-a2d3-40e8-8cb5-2e1fb8b86953");
 		Thread.sleep(2000);
@@ -227,11 +230,21 @@ public class Cookies extends TestData
 		assertNull(driver.manage().getCookieNamed("afftoken")) ;
 		assertNull(driver.manage().getCookieNamed("af_id")) ;
 	}
-
 	@AfterMethod
-	public void quit()
+	public void quit(ITestResult result)
 	{
-		driver.quit();	
-	} 
-
+		if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			test.log(LogStatus.PASS, "Test case passed");
+		}
+		else if(result.getStatus() == ITestResult.FAILURE)
+		{
+			test.log(LogStatus.FAIL, result.getThrowable());
+		}
+		else if(result.getStatus() == ITestResult.SKIP)
+		{
+			test.log(LogStatus.SKIP, "Test case skip");
+		}
+		driver.close();
+	}
 }

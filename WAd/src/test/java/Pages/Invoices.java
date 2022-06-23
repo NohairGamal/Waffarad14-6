@@ -7,12 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import TestBase.TestData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Invoices
+public class Invoices extends TestData
 {
 	WebDriver driver;
 
@@ -54,7 +59,7 @@ public class Invoices
 	@Test
 	public void Invoice_Details()
 	{
-		//test =extent.startTest("Invoice_Details");
+		test =extent.startTest("Invoice_Details");
 
 		WebElement Invoices_Details_Button= driver.findElement(By.xpath("//*[@title='Invoice Details']"));
 		Invoices_Details_Button.click();
@@ -62,11 +67,11 @@ public class Invoices
 		WebElement Field_InvoiceNumber= driver.findElement(By.xpath("//*[@for='InvoiceNumber']"));		
 		assertEquals(Field_InvoiceNumber.getText(),"Invoice Number");  //This is a field in page of Invoice_Details
 	}
-	
+	/*
 	@Test
 	public void Download_Invoice()
 	{
-		//test =extent.startTest("Download_Invoice");
+		test =extent.startTest("Download_Invoice");
 
 		WebElement Download_Invoice= driver.findElement(By.xpath("//*[@title='Download Invoice']"));
 		Download_Invoice.click();
@@ -75,7 +80,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_spacesInField_FirstName()
 	{
-	//	test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_spacesInField_FirstName");
+		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_spacesInField_FirstName");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -106,7 +111,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_FirstName()
 	{
-		//test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_FirstName");
+		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_FirstName");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -137,7 +142,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_SpacesInField_LastName()
 	{
-		//test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_SpacesInField_LastName");
+		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_SpacesInField_LastName");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -168,7 +173,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_LastName()
 	{
-//		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_LastName");
+		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_LastName");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -199,7 +204,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_WrongFormat_inFieldEmail()
 	{
-		//test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_WrongFormat_inFieldEmail");
+		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_WrongFormat_inFieldEmail");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -230,7 +235,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_LettersAndSymbols_InField_Phone()
 	{
-		//test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_LettersAndSymbols_InField_Phone");
+		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_LettersAndSymbols_InField_Phone");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -261,7 +266,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_Wronglimitation_InField_Phone()
 	{
-		//test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_Wronglimitation_InField_Phone");
+		test =extent.startTest("Pay_InvoiceWith_correctData_Buinsert_Wronglimitation_InField_Phone");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -292,7 +297,7 @@ public class Invoices
 	@Test
 	public void Pay_InvoiceWith_correctData_AndChoose_CreditCard()
 	{
-	//	test =extent.startTest("Pay_InvoiceWith_correctData_AndChoose_CreditCard");
+		test =extent.startTest("Pay_InvoiceWith_correctData_AndChoose_CreditCard");
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
@@ -318,12 +323,22 @@ public class Invoices
 		
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click();
-	}
-	
+	} */
 	@AfterMethod
-	public void quit()
+	public void quit(ITestResult result)
 	{
-		driver.quit();	
+		if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			test.log(LogStatus.PASS, "Test case passed");
+		}
+		else if(result.getStatus() == ITestResult.FAILURE)
+		{
+			test.log(LogStatus.FAIL, result.getThrowable());
+		}
+		else if(result.getStatus() == ITestResult.SKIP)
+		{
+			test.log(LogStatus.SKIP, "Test case skip");
+		}
+		driver.close();
 	}
-
 }

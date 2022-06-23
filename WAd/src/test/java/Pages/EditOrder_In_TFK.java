@@ -9,12 +9,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import com.relevantcodes.extentreports.LogStatus;
+import TestBase.TestData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class EditOrder_In_TFK 
+public class EditOrder_In_TFK extends TestData
 {
 	WebDriver driver;
 
@@ -69,7 +72,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void CheckThat_OrderID_Disabled()
 	{
-	//	test = extent.startTest("CheckThat_OrderID_Disabled");
+		test = extent.startTest("CheckThat_OrderID_Disabled");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -79,7 +82,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_NegativeNumber_In_OrderTotal()  //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderTotal");
+		test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderTotal");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -157,7 +160,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_With_Insert_Zero_In_OrderTotal() throws InterruptedException  //Data don't save
 	{ 
-		//test = extent.startTest("ValidData_With_Insert_Zero_In_OrderTotal");
+		test = extent.startTest("ValidData_With_Insert_Zero_In_OrderTotal");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -212,7 +215,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_NegativeNumber_In_OrderNet()  //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderNet");
+		test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderNet");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -251,7 +254,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_Zero_In_OrderNet() throws InterruptedException //Data saves normally
 	{
-		//test = extent.startTest("ValidData_WithInsert_Zero_In_OrderNet");
+		test = extent.startTest("ValidData_WithInsert_Zero_In_OrderNet");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -305,7 +308,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderNet_GreaterThan_OrderTotal() throws InterruptedException //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_OrderNet_GreaterThan_OrderTotal");
+		test = extent.startTest("ValidData_WithInsert_OrderNet_GreaterThan_OrderTotal");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -359,7 +362,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_Without_insertDataIN_OrderNet() //Data don't save
 	{
-	//	test = extent.startTest("ValidData_Without_insertDataIN_OrderNet");
+		test = extent.startTest("ValidData_Without_insertDataIN_OrderNet");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -399,7 +402,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_NegativeNumber_In_OrderTax() throws InterruptedException  //Data don't save
 	{
-	//	test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderTax");
+		test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderTax");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -438,8 +441,8 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_Zero_In_OrderTax() throws InterruptedException  //Data save normally
 	{
-	//	test = extent.startTest("ValidData_WithInsert_Zero_In_OrderTax");
-		
+		test = extent.startTest("ValidData_WithInsert_Zero_In_OrderTax");
+
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
 
@@ -490,7 +493,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderTax_GreaterThan_OrderTotal() throws InterruptedException  //Data don't save
 	{
-	//	test = extent.startTest("ValidData_WithInsert_OrderTax_GreaterThan_OrderTotal");
+		test = extent.startTest("ValidData_WithInsert_OrderTax_GreaterThan_OrderTotal");
 		WebElement OrderTotal = driver.findElement(By.id("OrderTotal"));
 		OrderTotal.clear();
 		OrderTotal.sendKeys("1000");
@@ -537,7 +540,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderTax_GreaterThan_OrderNet() throws InterruptedException  //Data save normally
 	{
-//		test = extent.startTest("ValidData_WithInsert_OrderTax_GreaterThan_OrderNet");
+		test = extent.startTest("ValidData_WithInsert_OrderTax_GreaterThan_OrderNet");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -590,7 +593,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_Without_insertDataIN_OrderTax() //Data don't save
 	{
-	//	test = extent.startTest("ValidData_Without_insertDataIN_OrderTax");
+		test = extent.startTest("ValidData_Without_insertDataIN_OrderTax");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -630,7 +633,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_NegativeNumber_In_OrderShipping()  //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderShipping");
+		test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderShipping");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -669,7 +672,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_Zero_In_OrderShipping() throws InterruptedException  //Data save normally
 	{
-		//	test = extent.startTest("ValidData_WithInsert_Zero_In_OrderShipping");
+		test = extent.startTest("ValidData_WithInsert_Zero_In_OrderShipping");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -723,7 +726,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal() throws InterruptedException  //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal");
+		test = extent.startTest("ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -775,7 +778,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderShipping_GreaterThan_OrderNet() throws InterruptedException  //Data save normally
 	{
-		//test = extent.startTest("ValidData_WithInsert_OrderShipping_GreaterThan_OrderNet");
+		test = extent.startTest("ValidData_WithInsert_OrderShipping_GreaterThan_OrderNet");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -828,7 +831,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_Without_insertDataIN_OrderShipping() //Data don't save
 	{
-		//	test = extent.startTest("ValidData_Without_insertDataIN_OrderShipping");
+		test = extent.startTest("ValidData_Without_insertDataIN_OrderShipping");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -868,7 +871,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_NegativeNumber_In_OrderDiscount()  //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderDiscount");
+		test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderDiscount");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -907,7 +910,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_Zero_In_OrderDiscount() throws InterruptedException  //Data save normally
 	{
-		//	test = extent.startTest("ValidData_WithInsert_Zero_In_OrderDiscount");
+		test = extent.startTest("ValidData_WithInsert_Zero_In_OrderDiscount");
 
 		WebElement OrderTotal = driver.findElement(By.id("OrderTotal"));
 		OrderTotal.clear();
@@ -955,7 +958,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_Without_insertDataIN_OrderDiscount() //Data don't save
 	{
-		//		test = extent.startTest("ValidData_Without_insertDataIN_OrderDiscount");
+		test = extent.startTest("ValidData_Without_insertDataIN_OrderDiscount");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -994,7 +997,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal() throws InterruptedException  //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal");
+		test = extent.startTest("ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -1045,7 +1048,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderDiscount_GreaterThan_OrderNet() throws InterruptedException  //Data save normally
 	{
-		//test = extent.startTest("ValidData_WithInsert_OrderDiscount_GreaterThan_OrderNet");
+		test = extent.startTest("ValidData_WithInsert_OrderDiscount_GreaterThan_OrderNet");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -1097,7 +1100,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_NegativeNumber_In_OrderCommission()  //Data don't save
 	{
-		//	test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderCommission");
+		test = extent.startTest("ValidData_WithInsert_NegativeNumber_In_OrderCommission");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -1136,7 +1139,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_Zero_In_OrderCommission() throws InterruptedException  //Data save normally
 	{
-		//	test = extent.startTest("ValidData_WithInsert_Zero_In_OrderCommission");
+		test = extent.startTest("ValidData_WithInsert_Zero_In_OrderCommission");
 
 		WebElement OrderTotal = driver.findElement(By.id("OrderTotal"));
 		OrderTotal.clear();
@@ -1184,7 +1187,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_Without_insertDataIN_OrderCommission() //Data don't save
 	{
-		//	test = extent.startTest("ValidData_Without_insertDataIN_OrderCommission");
+		test = extent.startTest("ValidData_Without_insertDataIN_OrderCommission");
 
 		WebElement OrderID = driver.findElement(By.xpath("(//*[@id ='OrderId'])[2]"));
 		assertEquals("3712293699749", OrderID.getAttribute("value"));
@@ -1223,7 +1226,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderCommission_GreaterThan_OrderTotal() throws InterruptedException  //Data don't save
 	{
-		//test = extent.startTest("ValidData_WithInsert_OrderCommission_GreaterThan_OrderTotal");
+		test = extent.startTest("ValidData_WithInsert_OrderCommission_GreaterThan_OrderTotal");
 
 		WebElement OrderTotal = driver.findElement(By.id("OrderTotal"));
 		OrderTotal.clear();
@@ -1271,7 +1274,7 @@ public class EditOrder_In_TFK
 	@Test
 	public void ValidData_WithInsert_OrderCommission_GreaterThan_OrderNet() throws InterruptedException  //Data save normally
 	{
-		//test = extent.startTest("ValidData_WithInsert_OrderCommission_GreaterThan_OrderNet");
+		test = extent.startTest("ValidData_WithInsert_OrderCommission_GreaterThan_OrderNet");
 
 		WebElement OrderTotal = driver.findElement(By.id("OrderTotal"));
 		OrderTotal.clear();
@@ -1317,8 +1320,20 @@ public class EditOrder_In_TFK
 	}
 
 	@AfterMethod
-	public void quit()
+	public void quit(ITestResult result)
 	{
+		if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			test.log(LogStatus.PASS, "Test case passed");
+		}
+		else if(result.getStatus() == ITestResult.FAILURE)
+		{
+			test.log(LogStatus.FAIL, result.getThrowable());
+		}
+		else if(result.getStatus() == ITestResult.SKIP)
+		{
+			test.log(LogStatus.SKIP, "Test case skip");
+		}
 		driver.close();
 	}
 }
