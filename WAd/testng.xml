@@ -11,7 +11,7 @@
       <!--class name="Pages.EditOrder_In_TFK"/-->  <!-- 28 Test cases -->  
       <!--class name="Pages.EditOrder_In_Yashry"/ --> <!-- 13 Test cases ???? Check last Test case --> 
       
-      <class name="Pages.Report"/>  
+      <class name="Pages.ReportWaffarAd"/>  
    </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
