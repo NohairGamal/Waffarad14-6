@@ -3,23 +3,14 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Pages.EditOrder_In_Yashry">
+      <class name="Pages.Cookies">
         <methods>
-          <include name="ValidData_WithInsert_OrderShipping_GreaterThan_OrderTotal"/>
-          <include name="ValidData_Without_InsertData_In_OrderDiscount"/>
-          <include name="open_URL"/>
-          <include name="ValidData_WithInsert_NegativeNumber_In_OrderDiscount"/>
           <include name="quit"/>
-          <include name="ValidData_WithInsert_OrderDiscount_GreaterThan_OrderTotal"/>
-          <include name="ValidData_Without_InsertData_In_OrderShipping"/>
-          <include name="ValidData_WithInsert_NegativeNumber_In_OrderShipping"/>
-          <include name="ValidData_With_Insert_Zero_In_OrderDiscount"/>
-          <include name="ValidData_Without_InsertData_In_OrderTotal"/>
-          <include name="ValidData_WithInsert_NegativeNumber_In_OrderTotal"/>
-          <include name="ValidData_With_Insert_Zero_In_OrderShipping"/>
-          <include name="ValidData_With_Insert_Zero_In_OrderTotal"/>
+          <include name="open_URL"/>
+          <include name="Cookies_msou"/>
+          <include name="Cookies_melouk"/>
         </methods>
-      </class> <!-- Pages.EditOrder_In_Yashry -->
+      </class> <!-- Pages.Cookies -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

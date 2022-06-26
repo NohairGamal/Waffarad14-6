@@ -46,7 +46,7 @@ public class Invoices extends TestData
 
 		WebElement GoToMerchant_Button = driver.findElement(By.id("GotoMerchantBtn"));
 		GoToMerchant_Button.click();
-		
+
 		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
 
 		WebElement Invoices= driver.findElement(By.xpath("//*[@href='/Merchant/Invoice']"));
@@ -67,7 +67,7 @@ public class Invoices extends TestData
 		WebElement Field_InvoiceNumber= driver.findElement(By.xpath("//*[@for='InvoiceNumber']"));		
 		assertEquals(Field_InvoiceNumber.getText(),"Invoice Number");  //This is a field in page of Invoice_Details
 	}
-	/*
+	
 	@Test
 	public void Download_Invoice()
 	{
@@ -76,7 +76,7 @@ public class Invoices extends TestData
 		WebElement Download_Invoice= driver.findElement(By.xpath("//*[@title='Download Invoice']"));
 		Download_Invoice.click();
 	}
-	
+
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_spacesInField_FirstName()
 	{
@@ -84,30 +84,30 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("      ");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("Gamal");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohair@gmail.com");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("01087656565");
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click() ;
-		
+
 		WebElement Error= driver.findElement(By.xpath("//*[@data-valmsg-for='FirstName']"));
-	    
+
 	    assertEquals(Error.getText(),"First name is required.");
 	}
-	
+
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_FirstName()
 	{
@@ -115,30 +115,30 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("@#@#2323233");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("Gamal");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohair@gmail.com");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("01087656565");
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click();
-		
+
 		WebElement Error= driver.findElement(By.id("FirstName-error"));
-	    
+
 	    assertEquals(Error.getText(),"First name not valid must be characters only");
 	}
-	
+
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_SpacesInField_LastName()
 	{
@@ -146,30 +146,30 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("Nohair");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("    ");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohair@gmail.com");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("01087656565");
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click() ;
-		
+
 		WebElement Error= driver.findElement(By.xpath("//*[@data-valmsg-for='LastName']"));
-	    
+
 	    assertEquals(Error.getText(),"Last name is required.");
 	}
-	
+
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_SymbolsAndNumbersInField_LastName()
 	{
@@ -177,27 +177,27 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("Nohair");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("@#@#2323");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohair@gmail.com");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("01087656565");
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click() ;
-		
+
 		WebElement Error= driver.findElement(By.id("LastName-error"));
-	    
+
 	    assertEquals(Error.getText(),"Last name not valid must be characters only");
 	}
 
@@ -208,30 +208,30 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("Nohair");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("Gamal");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohai");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("01087656565");
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click() ;
-		
+
 		WebElement Error= driver.findElement(By.id("Email-error"));
-	    
+
 	    assertEquals(Error.getText(),"Email is invalid");
 	}
-	
+
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_LettersAndSymbols_InField_Phone()
 	{
@@ -239,30 +239,30 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("Nohair");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("Gamal");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohair@gmail.com");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("eeeeww@#@#@#@");
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click() ;
-		
+
 		WebElement Error= driver.findElement(By.id("PhoneNumber-error"));
-	    
+
 	    assertEquals(Error.getText(),"Phone number must be between 7 and 11 digits");
 	}
-	
+
 	@Test
 	public void Pay_InvoiceWith_correctData_Buinsert_Wronglimitation_InField_Phone()
 	{
@@ -270,30 +270,30 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("Nohair");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("Gamal");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohair@gmail.com");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("010");
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click() ;
-		
+
 		WebElement Error= driver.findElement(By.id("PhoneNumber-error"));
-	    
+
 	    assertEquals(Error.getText(),"Phone number must be between 7 and 11 digits");
 	}
-	
+
 	@Test
 	public void Pay_InvoiceWith_correctData_AndChoose_CreditCard()
 	{
@@ -301,29 +301,29 @@ public class Invoices extends TestData
 
 		WebElement Pay_button= driver.findElement(By.xpath("//*[@title ='Pay Invoice']"));
 		Pay_button.click();
-		
+
 		WebElement Lable_Firstname= driver.findElement(By.xpath("//*[@for='FirstName']"));
 		assertEquals(Lable_Firstname.getText() , "FirstName");
-	    
+
 		WebElement Field_Firstname= driver.findElement(By.id("FirstName"));
 		Field_Firstname.sendKeys("Nohair");
-		
+
 		WebElement Field_lastname= driver.findElement(By.id("LastName"));
 		Field_lastname.sendKeys("Gamal");
-		
+
 		WebElement Field_Email = driver.findElement(By.id("Email"));
 		Field_Email.sendKeys("gnohair@gmail.com");
-		
+
 		WebElement Field_Phone = driver.findElement(By.id("PhoneNumber"));
 		Field_Phone.sendKeys("01099898989");
-		
+
 		WebElement Payment_Type_List = driver.findElement(By.id("PaymentType"));
 		Select option = new Select (Payment_Type_List);
 		option.selectByIndex(2);
-		
+
 		WebElement Submit= driver.findElement(By.xpath("//*[@type='submit']"));
 		Submit.click();
-	} */
+	}
 	@AfterMethod
 	public void quit(ITestResult result)
 	{

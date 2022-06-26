@@ -55,7 +55,7 @@ public class Cookies extends TestData
 
 		Thread.sleep(2000);
 
-		driver.manage().deleteAllCookies() ;
+		driver.manage().deleteAllCookies();
 
 		Thread.sleep(2000);
 
